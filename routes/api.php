@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+//Rutas para usuarios con domicilio:
+Route::group(['prefix' => 'usuarios'], function () {
+    Route::get('obtenerUsuarios', [UserController::class, 'obterUsuariosConDomicilio']);
+    Route::get('obterUsuarioId', [UserController::class, 'obterUsuarioId']);
+});
