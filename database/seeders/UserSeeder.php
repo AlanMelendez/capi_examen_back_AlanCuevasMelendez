@@ -7,6 +7,8 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\UserDomicilio;
 use Faker\Factory as Faker;
+use Illuminate\Support\Str;
+
 
 class UserSeeder extends Seeder
 {
@@ -37,7 +39,7 @@ class UserSeeder extends Seeder
                     'domicilio' => $faker->streetAddress(),
                     'numero_exterior' => $faker->buildingNumber(),
                     'colonia' => $faker->streetName(),
-                    'cp' => $faker->postcode(),
+                    'cp' => $faker->randomNumber(7, true),
                     'ciudad' => $faker->city(),
                     'fecha_nacimiento' => $faker->date(),
                 ]);

@@ -16,12 +16,11 @@ return new class extends Migration
         // Migracion con datos del usuario: 
         Schema::create('user_domicilio', function (Blueprint $table) {
             
-            $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('domicilio', 200);
             $table->integer('numero_exterior');
             $table->string('colonia',100);
-            $table->integer('cp', 7);
+            $table->integer('cp');
             $table->string('ciudad',100);
 
             // Relacion con la tabla users
