@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Carbon\Carbon;
+
 
 class UserController extends Controller
 {
@@ -23,8 +26,9 @@ class UserController extends Controller
             foreach ($usuarios as $usuario) {
                 //Agreagamos un nuevo campo al array de usuarios con la edad calculada, hacemos el calculo usando Carbon:
                 $usuario['edad'] = Carbon::parse($usuario->userDomicilio->fecha_nacimiento)->age;
-                //Agregamos el usuario con su edad al array:
-                $usuariosConEdad.push($usuario);
+                
+                //Agregamos el usuario con la edad calculada al array:
+                array_push($usuariosConEdad, $usuario);
             }
 
             //Retornamos el array con los usuarios con la edad calculada:
