@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('colonia',100);
             $table->integer('cp', 7);
             $table->string('ciudad',100);
-    
 
             // Relacion con la tabla users
             $table->foreign('user_id')->references('id')->on('users');
